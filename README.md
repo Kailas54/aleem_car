@@ -1,21 +1,32 @@
 # DARB CAR SERVICES — Website
 
-Static landing page matching the provided hero design, with About, Workshop, and Contact sections below the fold.
+Static landing page for DARB Car Services (bilingual EN/AR): hero, about, tyre brands marquee, services fold, and contact from the brochure.
 
 ## Run locally
 
-Open `index.html` in your browser, or serve the folder:
-
 ```bash
-npx --yes serve .
+py -3 -m http.server 5500
 ```
 
-Then visit `http://localhost:3000`.
+Open `http://localhost:5500`.
+
+## Deploy (GitHub Pages)
+
+Pushes to `main` run `.github/workflows/pages.yml`, which publishes the site root to GitHub Pages.
+
+1. Log in: `gh auth login`
+2. Create and push (from this folder):
+
+```bash
+gh repo create darb-car-services --public --source=. --remote=origin --push
+```
+
+3. In the repo on GitHub: **Settings → Pages → Build and deployment** → Source: **GitHub Actions**.
+4. After the workflow finishes, the site is at `https://<your-username>.github.io/darb-car-services/`.
 
 ## Structure
 
-- `index.html` — page markup (bilingual EN/AR)
-- `css/styles.css` — layout and visual styling
-- `js/main.js` — mobile menu, services dropdown, booking form stub
-- `assets/hero.jpg` — hero background from your design reference
-- `assets/logo.svg` — header mark (replace with final brand asset if needed)
+- `index.html` — page markup
+- `css/styles.css` — styles
+- `js/` — marquee, service fold (GSAP), WhatsApp and UI
+- `assets/` — logos, hero, service images, brand SVGs

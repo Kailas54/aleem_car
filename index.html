@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DARB CAR SERVICES | الدرب لخدمات السيارات</title>
+    <meta
+      name="description"
+      content="Expert car care, repair, and maintenance. Book your service at DARB CAR SERVICES — proud part of Aldarwish Tyres."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="DARB CAR SERVICES home">
+          <img class="brand__mark" src="assets/logo (3).png" alt="" width="48" height="48" />
+          <span class="brand__text">
+            <span class="brand__ar" lang="ar">الدرب لخدمات السيارات</span>
+            <span class="brand__en">DARB CAR SERVICES</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item nav-item--dropdown">
+            <button type="button" class="nav-link nav-link--trigger" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <ul class="dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="#services">Tyre brands</a></li>
+              <li role="none"><a role="menuitem" href="#book">Book a service</a></li>
+              <li role="none"><a role="menuitem" href="#our-services">Our services</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="#about">About us</a>
+          <a class="nav-link" href="#our-services">Our services</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <a
+          class="btn btn--nav"
+          href="https://wa.me/971507664888"
+          data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+        >
+          Book a Service
+          <span class="btn__icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </span>
+        </a>
+
+        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-label="Welcome">
+          <div class="hero__media" role="img" aria-label="Luxury car on a lift in a modern workshop"></div>
+          <div class="hero__shade"></div>
+
+          <div class="hero__content">
+            <p class="hero__eyebrow">
+              <span>SERVICE</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span>REPAIR</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span>CARE</span>
+            </p>
+
+            <h1 class="hero__title">
+              <span class="hero__title-line">YOUR ROAD TO</span>
+              <span class="hero__title-highlight">RELIABLE CAR CARE</span>
+            </h1>
+
+            <p class="hero__subtitle">Expert care. Confident driving.</p>
+            <p class="hero__subtitle-ar" lang="ar" dir="rtl">طريقك إلى عناية موثوقة بسيارتك</p>
+
+            <div class="hero__actions">
+              <a
+                class="btn btn--primary"
+                href="https://wa.me/971507664888"
+                data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+              >
+                BOOK A SERVICE
+                <span class="btn__icon btn__icon--circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </a>
+              <a class="btn btn--ghost" href="#services">Explore services</a>
+            </div>
+
+            <div class="hero__partner">
+              <span class="hero__partner-label">PROUD PART OF</span>
+              <img
+                class="hero__partner-logo"
+                src="assets/logoaldarwish.png"
+                alt="Al Darwish Tyres &amp; Oil"
+                width="160"
+                height="64"
+              />
+            </div>
+          </div>
+
+          <div class="brand-marquee" id="services" aria-label="Tyre brands we supply">
+            <p class="brand-marquee__heading">Our tyre collections</p>
+            <div class="brand-marquee__viewport">
+              <div class="brand-marquee__track" id="brandMarqueeTrack"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="welcome" id="about" aria-labelledby="welcome-title">
+          <div class="welcome__lines" aria-hidden="true"></div>
+
+          <div class="welcome__shell">
+            <header class="welcome__head">
+              <p class="welcome__eyebrow" lang="ar" dir="rtl">فصل جديد. فريق أقوى.</p>
+              <h2 class="welcome__title" id="welcome-title">
+                <span>A new chapter.</span>
+                <span>A stronger team.</span>
+                <span>Welcome to DARB Car Services.</span>
+              </h2>
+              <div class="welcome__actions">
+                <a
+                  class="btn-pill"
+                  href="https://wa.me/971507664888"
+                  data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+                >
+                  Book a service
+                  <span class="btn-pill__icon" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                  </span>
+                </a>
+                <a class="btn-pill" href="#our-services">
+                  Our services
+                  <span class="btn-pill__icon" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </header>
+
+            <div class="welcome__body">
+              <div class="welcome__text">
+                <p class="welcome__kicker">Under new management</p>
+                <div class="welcome__columns">
+                  <p class="welcome__copy">
+                    DARB Car Services is now under new management, with a new, powerful team and greater
+                    resources behind every job we do. From tyres to oil changes to advanced diagnostics, we
+                    bring skilled technicians, modern equipment and a customer-first approach to keep you
+                    safe and moving on the road.
+                  </p>
+                  <p class="welcome__copy welcome__copy--ar" lang="ar" dir="rtl">
+                    أصبحت الدرب لخدمات السيارات اليوم تحت إدارة جديدة، يدعمها فريق عمل جديد وقوي وموارد
+                    أكبر في كل خدمة نقدمها. من الإطارات وتغيير الزيت إلى الفحص المتقدم، نوفر فنيين مهرين
+                    ومعدات حديثة واهتماماً بالعميل كاملاً لتبقى بأمان على الطريق.
+                  </p>
+                </div>
+              </div>
+              <img
+                class="welcome__figure"
+                src="assets/pdf-page2-img-0.jpeg"
+                alt="DARB Car Services technician with diagnostic equipment"
+                width="900"
+                height="600"
+              />
+            </div>
+
+            <footer class="welcome__foot">
+              <ul class="welcome__highlights">
+                <li>
+                  <span class="welcome__highlight-en">New management</span>
+                  <span class="welcome__highlight-ar" lang="ar" dir="rtl">إدارة جديدة</span>
+                </li>
+                <li>
+                  <span class="welcome__highlight-en">Powerful team</span>
+                  <span class="welcome__highlight-ar" lang="ar" dir="rtl">فريق قوي</span>
+                </li>
+                <li>
+                  <span class="welcome__highlight-en">Greater resources</span>
+                  <span class="welcome__highlight-ar" lang="ar" dir="rtl">موارد أكبر</span>
+                </li>
+              </ul>
+              <div class="welcome__partner">
+                <span class="welcome__partner-label">Proud part of</span>
+                <img src="assets/logoaldarwish.png" alt="Al Darwish Tyres &amp; Oil" height="32" />
+              </div>
+            </footer>
+          </div>
+        </section>
+
+        <section class="service-fold" id="our-services" aria-labelledby="service-fold-title">
+          <div class="service-fold__top">
+            <p class="service-fold__brand" id="service-fold-title">DARB Car Services</p>
+            <a
+              class="service-fold__book-cta"
+              href="https://wa.me/971507664888"
+              data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+            >
+              Book a call now
+            </a>
+          </div>
+
+          <div class="service-fold__layout">
+            <nav class="service-fold__rail" id="serviceFoldRail" aria-label="Choose a service">
+              <button type="button" class="service-fold__rail-btn is-active" data-service-index="0" aria-selected="true" title="Tyre replacement">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="1" aria-selected="false" title="Wheel balancing">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18h12M8 18V9l4-3 4 3v9" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v12" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="2" aria-selected="false" title="Oil change">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6c-3 3-5 5.5-5 8a5 5 0 1010 0c0-2.5-2-5-5-8z" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="3" aria-selected="false" title="Computer diagnosis">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M8 19h8M9 10h6" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+            </nav>
+
+            <div class="service-fold__stage">
+              <div class="service-fold__stack" id="serviceFoldStack">
+                <article class="service-fold__card" data-service-index="0" style="--card-accent: #ff6b2c">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Tyre experiences drivers trust on every journey.</h3>
+                      <p>
+                        Premium brands from our collections, expert fitting, pressure checks, and safety
+                        inspection — so your car grips the road in heat, rain, and highway miles.
+                      </p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Trusted fitting</strong>
+                          <span>Aligned with Aldarwish Tyres standards</span>
+                        </div>
+                      </div>
+                      <a
+                        class="service-fold__card-link"
+                        href="https://wa.me/971507664888"
+                        data-whatsapp="Hello, I would like to book Tyre Replacement at DARB Car Services."
+                      >
+                        Book tyre service →
+                      </a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img
+                        src="assets/services/tyre-replacement.jpg"
+                        alt="Mechanic fitting a car tyre in the workshop"
+                        loading="lazy"
+                        width="900"
+                        height="600"
+                      />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-fold__card" data-service-index="1" style="--card-accent: #e11919">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Balanced wheels. Smoother rides. Longer tyre life.</h3>
+                      <p>
+                        Precision wheel balancing reduces vibration, uneven wear, and cabin noise — keeping
+                        luxury and daily drivers comfortable mile after mile.
+                      </p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Road-ready balance</strong>
+                          <span>Digital balancing equipment</span>
+                        </div>
+                      </div>
+                      <a
+                        class="service-fold__card-link"
+                        href="https://wa.me/971507664888"
+                        data-whatsapp="Hello, I would like to book Wheel Balancing at DARB Car Services."
+                      >
+                        Book balancing →
+                      </a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img
+                        src="assets/services/wheel-balancing.jpg"
+                        alt="Wheel alignment and balancing service"
+                        loading="lazy"
+                        width="900"
+                        height="600"
+                      />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-fold__card" data-service-index="2" style="--card-accent: #1e3a5f">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Clean oil. Cooler engine. Confident performance.</h3>
+                      <p>
+                        Manufacturer-grade oils and filters, drained and refilled with care to protect
+                        engines in UAE heat and stop-start city driving.
+                      </p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Full fluid care</strong>
+                          <span>Quality oils &amp; filters</span>
+                        </div>
+                      </div>
+                      <a
+                        class="service-fold__card-link"
+                        href="https://wa.me/971507664888"
+                        data-whatsapp="Hello, I would like to book an Oil Change at DARB Car Services."
+                      >
+                        Book oil change →
+                      </a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img
+                        src="assets/services/oil-change.jpg"
+                        alt="Engine oil being poured during an oil change"
+                        loading="lazy"
+                        width="900"
+                        height="600"
+                      />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-fold__card" data-service-index="3" style="--card-accent: #2b2b2b">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Computer diagnosis that finds issues before they grow.</h3>
+                      <p>
+                        Advanced scan tools read your vehicle’s systems, pinpoint faults, and give clear
+                        recommendations — transparent reports, no guesswork.
+                      </p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Smart diagnostics</strong>
+                          <span>Modern workshop technology</span>
+                        </div>
+                      </div>
+                      <a
+                        class="service-fold__card-link"
+                        href="https://wa.me/971507664888"
+                        data-whatsapp="Hello, I would like to book Computer Diagnosis at DARB Car Services."
+                      >
+                        Book diagnosis →
+                      </a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img
+                        src="assets/services/computer-diagnosis.jpg"
+                        alt="Mechanic performing computer diagnostics on a vehicle"
+                        loading="lazy"
+                        width="900"
+                        height="600"
+                      />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <footer class="service-fold__dock">
+            <div class="service-fold__dock-brand">
+              <img src="assets/logo (3).png" alt="" width="28" height="28" />
+              <span>DARB Car Services</span>
+            </div>
+            <div class="service-fold__dock-cta">
+              <span>Book your next service</span>
+              <a
+                class="service-fold__dock-wa"
+                href="https://wa.me/971507664888"
+                data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+              >
+                WhatsApp
+                <span class="service-fold__dock-dot" aria-hidden="true"></span>
+              </a>
+            </div>
+            <p class="service-fold__dock-meta">
+              <a href="tel:+97175015992">+971 7 501 5992</a>
+              · <a href="tel:+971507664888">+971 50 766 4888</a>
+              · Shaam, RAK · <span id="serviceFoldTime"></span>
+            </p>
+          </footer>
+        </section>
+
+        <section class="section section--contact" id="contact">
+          <div class="container container--contact">
+            <div class="contact-layout">
+              <div class="contact-info">
+                <h2 id="book">Visit us today</h2>
+                <p class="contact-info__lead" lang="ar" dir="rtl">اليوم زورونا</p>
+                <p class="contact-info__lead">
+                  Call or message us to book — part of Aldarwish Tyres.
+                </p>
+
+                <ul class="contact-details" aria-label="Contact details">
+                  <li class="contact-details__item">
+                    <span class="contact-details__label">Address</span>
+                    <p>
+                      Martyr Tariq Al Shehi Street, Shaam,<br />
+                      Ras Al Khaimah, UAE
+                    </p>
+                    <p class="contact-details__ar" lang="ar" dir="rtl">
+                      شارع الشهيد طارق الشحي، الشعم، رأس الخيمة، الإمارات العربية المتحدة
+                    </p>
+                    <a
+                      class="contact-details__link"
+                      href="https://www.google.com/maps/search/?api=1&amp;query=Martyr+Tariq+Al+Shehi+Street+Shaam+Ras+Al+Khaimah+UAE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open in Google Maps
+                    </a>
+                  </li>
+                  <li class="contact-details__item">
+                    <span class="contact-details__label">Phone</span>
+                    <p>
+                      <a href="tel:+97175015992">+971 7 501 5992</a>
+                    </p>
+                  </li>
+                  <li class="contact-details__item">
+                    <span class="contact-details__label">Mobile</span>
+                    <p>
+                      <a href="tel:+971507664888">+971 50 766 4888</a>
+                    </p>
+                    <a
+                      class="btn btn--primary btn--whatsapp"
+                      href="https://wa.me/971507664888"
+                      data-whatsapp="Hello, I would like to book a service at DARB Car Services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WhatsApp +971 50 766 4888
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="contact-booking">
+                <h3 class="contact-booking__title">Request a booking</h3>
+            <form class="contact-form" action="#" method="post">
+              <label>
+                Name
+                <input type="text" name="name" required autocomplete="name" />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" required autocomplete="tel" />
+              </label>
+              <label>
+                Service
+                <select name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Tyre Replacement</option>
+                  <option>Wheel Balancing</option>
+                  <option>Oil Change</option>
+                  <option>Computer Diagnosis</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn--primary">Send booking via WhatsApp</button>
+            </form>
+              </div>
+            </div>
+            <footer class="section__footer">
+              <p>© <span id="year"></span> DARB CAR SERVICES. All rights reserved.</p>
+              <p lang="ar" dir="rtl">الدرب لخدمات السيارات</p>
+            </footer>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="js/brands-marquee.js"></script>
+    <script src="js/service-fold.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

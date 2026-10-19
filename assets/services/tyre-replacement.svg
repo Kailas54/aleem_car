@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" role="img" aria-label="Tyre replacement">
+  <rect width="400" height="280" rx="16" fill="rgba(0,0,0,0.18)"/>
+  <circle cx="200" cy="140" r="78" stroke="white" stroke-width="10" opacity="0.95"/>
+  <circle cx="200" cy="140" r="34" stroke="white" stroke-width="8" opacity="0.9"/>
+  <path d="M200 62v24M200 194v24M122 140h24M254 140h24" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
+  <path d="M128 92l17 17M255 188l17 17M272 92l-17 17M145 188l-17 17" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" role="img" aria-label="Oil change">
+  <rect width="400" height="280" rx="16" fill="rgba(0,0,0,0.18)"/>
+  <path d="M200 56c-48 44-72 78-72 108a72 72 0 10144 0c0-30-24-64-72-108z" stroke="white" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M248 92c18 16 28 34 28 52" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  <rect x="176" y="188" width="48" height="36" rx="8" stroke="white" stroke-width="7"/>
+  <path d="M188 206h24" stroke="white" stroke-width="5" stroke-linecap="round"/>
+</svg>

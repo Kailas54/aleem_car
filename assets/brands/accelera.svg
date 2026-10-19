@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 56" role="img" aria-label="Accelera">
+  <rect width="160" height="56" fill="#ffffff"/>
+  <rect x="0" y="48" width="160" height="8" fill="#e21e26"/>
+  <rect x="0" y="0" width="6" height="56" fill="#111111"/>
+  <text x="83" y="33" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="800" fill="#111111">Accelera</text>
+</svg>

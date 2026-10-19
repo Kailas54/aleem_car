@@ -10,13 +10,27 @@ py -3 -m http.server 5500
 
 Open `http://localhost:5500`.
 
-## Deploy (GitHub Pages)
+## Deploy (Vercel)
 
 Repo: [github.com/Kailas54/aleem_car](https://github.com/Kailas54/aleem_car)
 
-Pushes to `main` run `.github/workflows/pages.yml`. In **Settings → Pages**, set **Build and deployment** source to **GitHub Actions** (one-time).
+### Option A — GitHub (recommended)
 
-Live site: **https://kailas54.github.io/aleem_car/**
+1. Go to [vercel.com/new](https://vercel.com/new) and import **Kailas54/aleem_car**.
+2. Framework preset: **Other** (static site, no build command).
+3. Deploy. Every push to `main` redeploys automatically.
+
+**Production:** https://aleem-ten.vercel.app
+
+### Option B — CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+`vercel.json` sets static hosting options (clean URLs).
 
 ## Structure
 

@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "brands"
-UA = "DARB-Car-Services/1.0 (contact: info@example.com)"
+UA = "AL-DARB-Car-Services/1.0 (contact: info@example.com)"
 
 # Wikimedia Commons file titles (verified or best match)
 BRANDS = [

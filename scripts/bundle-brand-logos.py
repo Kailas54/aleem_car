@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "brands"
-UA = "DARB-Car-Services/1.0 (brand marquee; local bundle)"
+UA = "AL-DARB-Car-Services/1.0 (brand marquee; local bundle)"
 
 # slug -> list of download URLs (first success wins)
 SOURCES: dict[str, list[str]] = {

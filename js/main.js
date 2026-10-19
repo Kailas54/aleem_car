@@ -20,7 +20,7 @@ if (serviceFoldTime) {
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   const message =
     link.getAttribute("data-whatsapp") ||
-    "Hello, I would like to book a service at DARB Car Services.";
+    "Hello, I would like to book a service at AL DARB Car Services.";
   link.href = buildWhatsAppUrl(message);
   link.target = "_blank";
   link.rel = "noopener noreferrer";
@@ -109,7 +109,7 @@ const contactForm = document.querySelector(".contact-form");
 contactForm?.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = new FormData(contactForm);
-  const message = `Hello DARB Car Services,
+  const message = `Hello AL DARB Car Services,
 
 I would like to request a booking.
 

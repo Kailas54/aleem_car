@@ -1,6 +1,6 @@
-# DARB CAR SERVICES — Website
+# AL DARB CAR SERVICES — Website
 
-Static landing page for DARB Car Services (bilingual EN/AR): hero, about, tyre brands marquee, services fold, and contact from the brochure.
+Static landing page for AL DARB Car Services (bilingual EN/AR): hero, about, tyre brands marquee, services fold, and contact from the brochure.
 
 ## Run locally
 

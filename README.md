@@ -12,17 +12,11 @@ Open `http://localhost:5500`.
 
 ## Deploy (GitHub Pages)
 
-Pushes to `main` run `.github/workflows/pages.yml`, which publishes the site root to GitHub Pages.
+Repo: [github.com/Kailas54/aleem_car](https://github.com/Kailas54/aleem_car)
 
-1. Log in: `gh auth login`
-2. Create and push (from this folder):
+Pushes to `main` run `.github/workflows/pages.yml`. In **Settings → Pages**, set **Build and deployment** source to **GitHub Actions** (one-time).
 
-```bash
-gh repo create darb-car-services --public --source=. --remote=origin --push
-```
-
-3. In the repo on GitHub: **Settings → Pages → Build and deployment** → Source: **GitHub Actions**.
-4. After the workflow finishes, the site is at `https://<your-username>.github.io/darb-car-services/`.
+Live site: **https://kailas54.github.io/aleem_car/**
 
 ## Structure
 

@@ -1621,6 +1621,14 @@ a {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.04em;
+  color: #0a1628;
+}
+
+.service-fold__dock-brand .logo-mark--black {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .service-fold__dock-cta {

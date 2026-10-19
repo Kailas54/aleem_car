@@ -95,7 +95,12 @@ const initScrollAnimations = () => {
   if (welcome) {
     const playWelcome = bindSectionReveal(welcome, () => {
       gsap.context(() => {
-        const tl = gsap.timeline({ defaults: revealDefaults });
+        const tl = gsap.timeline({
+          defaults: revealDefaults,
+          onComplete: () => {
+            gsap.set(".welcome__figure", { clearProps: "visibility,opacity,transform" });
+          },
+        });
 
         tl.from(".welcome__lines", { autoAlpha: 0, duration: 1.1 })
           .from(".welcome__eyebrow", { y: 28, autoAlpha: 0, duration: 0.65 }, "-=0.85")

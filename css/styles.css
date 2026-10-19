@@ -987,9 +987,39 @@ a {
 }
 
 @media (max-width: 900px) {
+  .welcome {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  main > section.welcome {
+    height: auto;
+    min-height: var(--section-h);
+    max-height: none;
+  }
+
+  .welcome__shell {
+    height: auto;
+    min-height: var(--section-h);
+    overflow: visible;
+  }
+
   .welcome__body {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 22%);
+    grid-template-rows: auto auto;
+    flex: none;
+    min-height: 0;
+  }
+
+  .welcome__figure {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: clamp(10rem, 32vw, 13.5rem);
+    max-height: min(42vh, 17.5rem);
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .welcome__columns {
@@ -1003,6 +1033,11 @@ a {
   .welcome__highlights {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.welcome.is-revealed .welcome__figure {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (max-height: 760px) {
@@ -1311,7 +1346,14 @@ a {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 100%;
   transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-fold__book-cta-text--short {
+  display: none;
 }
 
 .service-fold__wa-btn {
@@ -1673,6 +1715,57 @@ a {
     justify-self: center;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .service-fold__top {
+    gap: 0.5rem;
+  }
+
+  .service-fold__brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 520px) {
+  .service-fold__book-cta-text--long {
+    display: none;
+  }
+
+  .service-fold__book-cta-text--short {
+    display: inline;
+  }
+
+  .service-fold__book-cta {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .service-fold__book-cta-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .service-fold__book-cta {
+    padding: 0.55rem;
+    min-width: 2.65rem;
+    min-height: 2.65rem;
+  }
+
+  .service-fold__wa-icon {
+    width: 1.35rem;
+    height: 1.35rem;
   }
 }
 

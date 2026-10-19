@@ -6,7 +6,7 @@ if (foldStack && foldRail && foldSection && window.gsap) {
   const gsap = window.gsap;
   const cards = [...foldStack.querySelectorAll(".service-fold__card")];
   const railButtons = [...foldRail.querySelectorAll(".service-fold__rail-btn")];
-  let order = cards.map((_, index) => index);
+  let order = cards.map((_, index) => index).filter((i) => i !== 0).concat(0);
   let isAnimating = false;
   let sectionVisible = false;
   let autoCall = null;
@@ -14,12 +14,11 @@ if (foldStack && foldRail && foldSection && window.gsap) {
   const AUTO_INTERVAL = 4.8;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const STACK_LAYERS = [
-    { x: 0, y: 0, rotateY: 0, scale: 1, opacity: 1 },
-    { x: 8, y: 10, rotateY: 4, scale: 0.99, opacity: 0.96 },
-    { x: 14, y: 18, rotateY: 7, scale: 0.98, opacity: 0.9 },
-    { x: 20, y: 26, rotateY: 10, scale: 0.97, opacity: 0.82 },
-  ];
+  const STACK_LAYERS = cards.map((_, index) =>
+    index === 0
+      ? { x: 0, y: 0, rotateY: 0, scale: 1, opacity: 1 }
+      : { x: 0, y: 0, rotateY: 0, scale: 1, opacity: 0 }
+  );
 
   const topIndex = () => order[order.length - 1];
 
@@ -140,17 +139,46 @@ if (foldStack && foldRail && foldSection && window.gsap) {
     });
   };
 
-  const bringToTop = (targetIndex) => {
-    if (isAnimating || topIndex() === targetIndex) return;
-    isAnimating = true;
-    const step = () => {
-      if (topIndex() === targetIndex) {
-        isAnimating = false;
-        return;
+  const goToService = (targetIndex) => {
+    if (targetIndex < 0 || targetIndex >= cards.length) return;
+    if (topIndex() === targetIndex && !isAnimating) return;
+
+    gsap.killTweensOf(cards);
+    isAnimating = false;
+
+    const others = cards.map((_, index) => index).filter((index) => index !== targetIndex);
+    order = [...others, targetIndex];
+
+    cards.forEach((card) => card.classList.remove("is-folding"));
+
+    const rect = foldSection.getBoundingClientRect();
+    const headerOffset =
+      parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-h"), 10) || 88;
+    const needsScroll = rect.top > headerOffset + 24 || rect.top < -rect.height * 0.35;
+    if (needsScroll) {
+      if (typeof window.darbScrollTo === "function" && !reducedMotion) {
+        window.darbScrollTo(foldSection, { offset: -(headerOffset + 8) });
+      } else {
+        foldSection.scrollIntoView({
+          behavior: reducedMotion ? "auto" : "smooth",
+          block: "start",
+        });
       }
-      foldTopCard(step);
-    };
-    step();
+    }
+
+    layoutStack({
+      duration: reducedMotion ? 0 : 0.4,
+      ease: "power2.out",
+    });
+
+    stopAutoPlay();
+    if (sectionVisible) startAutoPlay();
+  };
+
+  const parseServiceHash = () => {
+    const match = window.location.hash.match(/^#our-services-(\d+)$/);
+    if (!match) return;
+    goToService(Number(match[1]));
   };
 
   const stopAutoPlay = () => {
@@ -181,12 +209,18 @@ if (foldStack && foldRail && foldSection && window.gsap) {
   });
 
   layoutStack({ duration: 0 });
+  parseServiceHash();
+  window.addEventListener("hashchange", parseServiceHash);
 
   railButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      bringToTop(Number(btn.dataset.serviceIndex));
+      const index = Number(btn.dataset.serviceIndex);
+      window.history.replaceState(null, "", `#our-services-${index}`);
+      goToService(index);
     });
   });
+
+  window.serviceFoldGoTo = goToService;
 
   foldStack.addEventListener("click", (event) => {
     if (event.target.closest("[data-fold-next]")) advance();

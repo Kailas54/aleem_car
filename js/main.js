@@ -55,21 +55,55 @@ if (menuToggle && siteNav) {
   });
 }
 
-const dropdownTrigger = document.querySelector(".nav-link--trigger");
-const dropdownParent = document.querySelector(".nav-item--dropdown");
+const closeAllDropdowns = () => {
+  document.querySelectorAll(".nav-item--dropdown").forEach((dropdownParent) => {
+    dropdownParent.classList.remove("is-open");
+    dropdownParent.querySelector(".nav-link--trigger")?.setAttribute("aria-expanded", "false");
+  });
+};
 
-if (dropdownTrigger && dropdownParent) {
+document.querySelectorAll(".nav-item--dropdown").forEach((dropdownParent) => {
+  const dropdownTrigger = dropdownParent.querySelector(".nav-link--trigger");
+  if (!dropdownTrigger) return;
+
   dropdownTrigger.addEventListener("click", (e) => {
     e.stopPropagation();
-    const open = dropdownParent.classList.toggle("is-open");
-    dropdownTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+    const wasOpen = dropdownParent.classList.contains("is-open");
+    closeAllDropdowns();
+    if (!wasOpen) {
+      dropdownParent.classList.add("is-open");
+      dropdownTrigger.setAttribute("aria-expanded", "true");
+    }
   });
+});
 
-  document.addEventListener("click", () => {
-    dropdownParent.classList.remove("is-open");
-    dropdownTrigger.setAttribute("aria-expanded", "false");
+document.addEventListener("click", closeAllDropdowns);
+
+const navigateToServiceCard = (hash) => {
+  const match = hash.match(/^#our-services-(\d+)$/);
+  if (!match) return;
+  const index = Number(match[1]);
+  const go = () => {
+    if (typeof window.serviceFoldGoTo === "function") {
+      window.serviceFoldGoTo(index);
+    }
+  };
+  go();
+  window.setTimeout(go, 120);
+};
+
+document.querySelectorAll('a[href^="#our-services-"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    closeAllDropdowns();
+    siteNav?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    navigateToServiceCard(link.getAttribute("href") || "");
   });
-}
+});
+
+window.addEventListener("hashchange", () => {
+  navigateToServiceCard(window.location.hash);
+});
 
 const contactForm = document.querySelector(".contact-form");
 contactForm?.addEventListener("submit", (e) => {

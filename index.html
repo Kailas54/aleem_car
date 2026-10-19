@@ -9,6 +9,7 @@
       content="Expert car care, repair, and maintenance. Book your service at DARB CAR SERVICES — proud part of Aldarwish Tyres."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://commons.wikimedia.org" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -16,33 +17,61 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <div class="page">
+  <body class="is-loading">
+    <div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="Loading DARB Car Services">
+      <div class="site-loader__glow" aria-hidden="true"></div>
+      <div class="site-loader__stage">
+        <p class="site-loader__en">DARB CAR SERVICES</p>
+        <div class="site-loader__logo-wrap">
+          <img
+            class="site-loader__logo"
+            src="assets/logo (3).png"
+            alt=""
+            width="112"
+            height="112"
+            decoding="async"
+          />
+        </div>
+        <p class="site-loader__ar" lang="ar" dir="rtl">الدرب لخدمات السيارات</p>
+      </div>
+      <div class="site-loader__bar" aria-hidden="true"><span></span></div>
+    </div>
+
+    <div class="page" aria-hidden="true" id="pageRoot">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="DARB CAR SERVICES home">
-          <img class="brand__mark" src="assets/logo (3).png" alt="" width="48" height="48" />
-          <span class="brand__text">
-            <span class="brand__ar" lang="ar">الدرب لخدمات السيارات</span>
-            <span class="brand__en">DARB CAR SERVICES</span>
-          </span>
-        </a>
+        <div class="header-branding">
+          <a class="brand" href="#top" aria-label="DARB CAR SERVICES home">
+            <img class="brand__mark" src="assets/logo (3).png" alt="" width="48" height="48" />
+            <span class="brand__text">
+              <span class="brand__ar" lang="ar">الدرب لخدمات السيارات</span>
+              <span class="brand__en">DARB CAR SERVICES</span>
+            </span>
+          </a>
+          <div class="header-partner" aria-label="Proud part of Aldarwish Tyres">
+            <span class="header-partner__label">PROUD PART OF</span>
+            <span class="header-partner__name">ALDARWISH TYRES</span>
+          </div>
+        </div>
 
         <nav class="site-nav" aria-label="Main">
+          <a class="nav-link" href="#about">About us</a>
           <div class="nav-item nav-item--dropdown">
             <button type="button" class="nav-link nav-link--trigger" aria-expanded="false" aria-haspopup="true">
-              Services
+              Our services
               <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
                 <path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </button>
-            <ul class="dropdown" role="menu">
-              <li role="none"><a role="menuitem" href="#services">Tyre brands</a></li>
-              <li role="none"><a role="menuitem" href="#book">Book a service</a></li>
-              <li role="none"><a role="menuitem" href="#our-services">Our services</a></li>
+            <ul class="dropdown dropdown--services" role="menu">
+              <li role="none"><a role="menuitem" href="#our-services-0">Tyre replacement</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-1">Wheel balancing</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-2">Nitrogen filling</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-3">Oil change</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-4">Computer diagnosis</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-5">Auto electrical</a></li>
+              <li role="none"><a role="menuitem" href="#our-services-6">Mechanical service</a></li>
             </ul>
           </div>
-          <a class="nav-link" href="#about">About us</a>
-          <a class="nav-link" href="#our-services">Our services</a>
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
 
@@ -102,16 +131,6 @@
               <a class="btn btn--ghost" href="#services">Explore services</a>
             </div>
 
-            <div class="hero__partner">
-              <span class="hero__partner-label">PROUD PART OF</span>
-              <img
-                class="hero__partner-logo"
-                src="assets/logoaldarwish.png"
-                alt="Al Darwish Tyres &amp; Oil"
-                width="160"
-                height="64"
-              />
-            </div>
           </div>
 
           <div class="brand-marquee" id="services" aria-label="Tyre brands we supply">
@@ -200,7 +219,7 @@
               </ul>
               <div class="welcome__partner">
                 <span class="welcome__partner-label">Proud part of</span>
-                <img src="assets/logoaldarwish.png" alt="Al Darwish Tyres &amp; Oil" height="32" />
+                <span class="welcome__partner-name">ALDARWISH TYRES</span>
               </div>
             </footer>
           </div>
@@ -210,11 +229,16 @@
           <div class="service-fold__top">
             <p class="service-fold__brand" id="service-fold-title">DARB Car Services</p>
             <a
-              class="service-fold__book-cta"
+              class="service-fold__book-cta service-fold__wa-btn"
               href="https://wa.me/971507664888"
               data-whatsapp="Hello, I would like to book a service at DARB Car Services."
             >
-              Book a call now
+              <svg class="service-fold__wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Book on WhatsApp
             </a>
           </div>
 
@@ -226,24 +250,30 @@
               <button type="button" class="service-fold__rail-btn" data-service-index="1" aria-selected="false" title="Wheel balancing">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18h12M8 18V9l4-3 4 3v9" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v12" stroke="currentColor" stroke-width="1.5"/></svg>
               </button>
-              <button type="button" class="service-fold__rail-btn" data-service-index="2" aria-selected="false" title="Oil change">
+              <button type="button" class="service-fold__rail-btn" data-service-index="2" aria-selected="false" title="Nitrogen filling">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 8.5h5M12 8.5V15.5" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="3" aria-selected="false" title="Oil change">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6c-3 3-5 5.5-5 8a5 5 0 1010 0c0-2.5-2-5-5-8z" stroke="currentColor" stroke-width="1.5"/></svg>
               </button>
-              <button type="button" class="service-fold__rail-btn" data-service-index="3" aria-selected="false" title="Computer diagnosis">
+              <button type="button" class="service-fold__rail-btn" data-service-index="4" aria-selected="false" title="Computer diagnosis">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M8 19h8M9 10h6" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="5" aria-selected="false" title="Auto electrical">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L5 14h6l-1 8 9-14h-6V2z" stroke="currentColor" stroke-width="1.5"/></svg>
+              </button>
+              <button type="button" class="service-fold__rail-btn" data-service-index="6" aria-selected="false" title="Mechanical service">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v3m0 12v3M3 12h3m12 0h3" stroke="currentColor" stroke-width="1.5"/></svg>
               </button>
             </nav>
 
             <div class="service-fold__stage">
               <div class="service-fold__stack" id="serviceFoldStack">
-                <article class="service-fold__card" data-service-index="0" style="--card-accent: #ff6b2c">
+                <article class="service-fold__card" data-service-index="0" style="--card-accent: #e11919">
                   <div class="service-fold__card-grid">
                     <div class="service-fold__card-copy">
                       <h3>Tyre experiences drivers trust on every journey.</h3>
-                      <p>
-                        Premium brands from our collections, expert fitting, pressure checks, and safety
-                        inspection — so your car grips the road in heat, rain, and highway miles.
-                      </p>
+                      <p>Quality tyres fitted quickly and correctly for a safe, smooth ride — premium brands, expert fitting, and safety checks.</p>
                       <div class="service-fold__quote">
                         <span class="service-fold__avatar">
                           <img src="assets/logo (3).png" alt="" width="40" height="40" />
@@ -253,22 +283,10 @@
                           <span>Aligned with Aldarwish Tyres standards</span>
                         </div>
                       </div>
-                      <a
-                        class="service-fold__card-link"
-                        href="https://wa.me/971507664888"
-                        data-whatsapp="Hello, I would like to book Tyre Replacement at DARB Car Services."
-                      >
-                        Book tyre service →
-                      </a>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Tyre Replacement at DARB Car Services.">Book tyre service →</a>
                     </div>
                     <div class="service-fold__card-visual">
-                      <img
-                        src="assets/services/tyre-replacement.jpg"
-                        alt="Mechanic fitting a car tyre in the workshop"
-                        loading="lazy"
-                        width="900"
-                        height="600"
-                      />
+                      <img src="assets/services/tyre-replacement.jpg" alt="Mechanic fitting a car tyre in the workshop" loading="lazy" width="900" height="600" />
                       <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
                       </button>
@@ -280,10 +298,7 @@
                   <div class="service-fold__card-grid">
                     <div class="service-fold__card-copy">
                       <h3>Balanced wheels. Smoother rides. Longer tyre life.</h3>
-                      <p>
-                        Precision wheel balancing reduces vibration, uneven wear, and cabin noise — keeping
-                        luxury and daily drivers comfortable mile after mile.
-                      </p>
+                      <p>Precise wheel balancing reduces vibration, uneven wear, and cabin noise for a comfortable drive.</p>
                       <div class="service-fold__quote">
                         <span class="service-fold__avatar">
                           <img src="assets/logo (3).png" alt="" width="40" height="40" />
@@ -293,22 +308,10 @@
                           <span>Digital balancing equipment</span>
                         </div>
                       </div>
-                      <a
-                        class="service-fold__card-link"
-                        href="https://wa.me/971507664888"
-                        data-whatsapp="Hello, I would like to book Wheel Balancing at DARB Car Services."
-                      >
-                        Book balancing →
-                      </a>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Wheel Balancing at DARB Car Services.">Book balancing →</a>
                     </div>
                     <div class="service-fold__card-visual">
-                      <img
-                        src="assets/services/wheel-balancing.jpg"
-                        alt="Wheel alignment and balancing service"
-                        loading="lazy"
-                        width="900"
-                        height="600"
-                      />
+                      <img src="assets/services/wheel-balancing.jpg" alt="Wheel alignment and balancing service" loading="lazy" width="900" height="600" />
                       <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
                       </button>
@@ -316,14 +319,36 @@
                   </div>
                 </article>
 
-                <article class="service-fold__card" data-service-index="2" style="--card-accent: #1e3a5f">
+                <article class="service-fold__card" data-service-index="2" style="--card-accent: #c41414">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Nitrogen filling for steadier tyre pressure.</h3>
+                      <p>Nitrogen inflation helps maintain pressure longer — especially useful in UAE heat and highway driving.</p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Steadier pressure</strong>
+                          <span>Professional nitrogen service</span>
+                        </div>
+                      </div>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Nitrogen Filling at DARB Car Services.">Book nitrogen fill →</a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img src="assets/services/tyre-replacement.jpg" alt="Car tyre service" loading="lazy" width="900" height="600" />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-fold__card" data-service-index="3" style="--card-accent: #1e3a5f">
                   <div class="service-fold__card-grid">
                     <div class="service-fold__card-copy">
                       <h3>Clean oil. Cooler engine. Confident performance.</h3>
-                      <p>
-                        Manufacturer-grade oils and filters, drained and refilled with care to protect
-                        engines in UAE heat and stop-start city driving.
-                      </p>
+                      <p>Engine oil and filter changes to keep your engine protected in heat and stop-start traffic.</p>
                       <div class="service-fold__quote">
                         <span class="service-fold__avatar">
                           <img src="assets/logo (3).png" alt="" width="40" height="40" />
@@ -333,22 +358,10 @@
                           <span>Quality oils &amp; filters</span>
                         </div>
                       </div>
-                      <a
-                        class="service-fold__card-link"
-                        href="https://wa.me/971507664888"
-                        data-whatsapp="Hello, I would like to book an Oil Change at DARB Car Services."
-                      >
-                        Book oil change →
-                      </a>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book an Oil Change at DARB Car Services.">Book oil change →</a>
                     </div>
                     <div class="service-fold__card-visual">
-                      <img
-                        src="assets/services/oil-change.jpg"
-                        alt="Engine oil being poured during an oil change"
-                        loading="lazy"
-                        width="900"
-                        height="600"
-                      />
+                      <img src="assets/services/oil-change.jpg" alt="Engine oil being poured during an oil change" loading="lazy" width="900" height="600" />
                       <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
                       </button>
@@ -356,14 +369,11 @@
                   </div>
                 </article>
 
-                <article class="service-fold__card" data-service-index="3" style="--card-accent: #2b2b2b">
+                <article class="service-fold__card" data-service-index="4" style="--card-accent: #2b2b2b">
                   <div class="service-fold__card-grid">
                     <div class="service-fold__card-copy">
                       <h3>Computer diagnosis that finds issues before they grow.</h3>
-                      <p>
-                        Advanced scan tools read your vehicle’s systems, pinpoint faults, and give clear
-                        recommendations — transparent reports, no guesswork.
-                      </p>
+                      <p>Computer scanning to find faults quickly and accurately — clear recommendations, no guesswork.</p>
                       <div class="service-fold__quote">
                         <span class="service-fold__avatar">
                           <img src="assets/logo (3).png" alt="" width="40" height="40" />
@@ -373,28 +383,67 @@
                           <span>Modern workshop technology</span>
                         </div>
                       </div>
-                      <a
-                        class="service-fold__card-link"
-                        href="https://wa.me/971507664888"
-                        data-whatsapp="Hello, I would like to book Computer Diagnosis at DARB Car Services."
-                      >
-                        Book diagnosis →
-                      </a>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Computer Diagnosis at DARB Car Services.">Book diagnosis →</a>
                     </div>
                     <div class="service-fold__card-visual">
-                      <img
-                        src="assets/services/computer-diagnosis.jpg"
-                        alt="Mechanic performing computer diagnostics on a vehicle"
-                        loading="lazy"
-                        width="900"
-                        height="600"
-                      />
+                      <img src="assets/services/computer-diagnosis.jpg" alt="Mechanic performing computer diagnostics on a vehicle" loading="lazy" width="900" height="600" />
                       <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
                         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
                       </button>
                     </div>
                   </div>
                 </article>
+
+                <article class="service-fold__card" data-service-index="5" style="--card-accent: #e11919">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Auto electrical checks and repairs you can trust.</h3>
+                      <p>Battery, wiring and electrical system checks and repairs to keep your car starting strong.</p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Electrical care</strong>
+                          <span>Battery &amp; wiring specialists</span>
+                        </div>
+                      </div>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Auto Electrical service at DARB Car Services.">Book electrical →</a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img src="assets/services/computer-diagnosis.jpg" alt="Auto electrical diagnostics" loading="lazy" width="900" height="600" />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-fold__card" data-service-index="6" style="--card-accent: #1e3a5f">
+                  <div class="service-fold__card-grid">
+                    <div class="service-fold__card-copy">
+                      <h3>Mechanical service and repairs done right.</h3>
+                      <p>General mechanical servicing and repairs from a team with the tools and experience to do it properly.</p>
+                      <div class="service-fold__quote">
+                        <span class="service-fold__avatar">
+                          <img src="assets/logo (3).png" alt="" width="40" height="40" />
+                        </span>
+                        <div>
+                          <strong>Workshop mechanical</strong>
+                          <span>Servicing &amp; general repairs</span>
+                        </div>
+                      </div>
+                      <a class="service-fold__card-link" href="https://wa.me/971507664888" data-whatsapp="Hello, I would like to book Mechanical Service at DARB Car Services.">Book mechanical →</a>
+                    </div>
+                    <div class="service-fold__card-visual">
+                      <img src="assets/services/wheel-balancing.jpg" alt="Mechanical car service in the workshop" loading="lazy" width="900" height="600" />
+                      <button type="button" class="service-fold__play" data-fold-next aria-label="Next service">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7l10 5-10 5V7z" fill="currentColor"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
               </div>
             </div>
           </div>
@@ -407,12 +456,16 @@
             <div class="service-fold__dock-cta">
               <span>Book your next service</span>
               <a
-                class="service-fold__dock-wa"
+                class="service-fold__dock-wa service-fold__wa-btn"
                 href="https://wa.me/971507664888"
                 data-whatsapp="Hello, I would like to book a service at DARB Car Services."
               >
+                <svg class="service-fold__wa-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
                 WhatsApp
-                <span class="service-fold__dock-dot" aria-hidden="true"></span>
               </a>
             </div>
             <p class="service-fold__dock-meta">
@@ -493,8 +546,11 @@
                   <option value="">Select a service</option>
                   <option>Tyre Replacement</option>
                   <option>Wheel Balancing</option>
+                  <option>Nitrogen Filling</option>
                   <option>Oil Change</option>
                   <option>Computer Diagnosis</option>
+                  <option>Auto Electrical</option>
+                  <option>Mechanical Service</option>
                 </select>
               </label>
               <button type="submit" class="btn btn--primary">Send booking via WhatsApp</button>
@@ -510,7 +566,12 @@
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="js/smooth-scroll.js"></script>
     <script src="js/brands-marquee.js"></script>
+    <script src="js/scroll-animations.js"></script>
     <script src="js/service-fold.js"></script>
     <script src="js/main.js"></script>
   </body>

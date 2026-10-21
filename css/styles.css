@@ -261,11 +261,29 @@ a {
 
 .header-partner {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0.45rem, 1.2vw, 0.65rem);
   padding-left: clamp(0.65rem, 1.8vw, 1.15rem);
   border-left: 1px solid rgba(255, 255, 255, 0.28);
   flex-shrink: 0;
+}
+
+.header-partner__logo {
+  display: block;
+  height: clamp(2.25rem, 5.5vw, 3rem);
+  width: auto;
+  max-width: 3.25rem;
+  object-fit: contain;
+  object-position: center top;
+  flex-shrink: 0;
+}
+
+.header-partner__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
 }
 
 .header-partner__label {
@@ -1780,8 +1798,95 @@ a {
 
 /* Responsive */
 @media (max-width: 900px) {
+  :root {
+    --header-h: 76px;
+  }
+
+  main > section.service-fold,
+  main > section.section--contact {
+    height: auto;
+    min-height: var(--section-h);
+    max-height: none;
+    overflow: visible;
+  }
+
+  .section--contact {
+    overflow-y: visible;
+    padding-bottom: 2.5rem;
+  }
+
+  .section {
+    overflow: visible;
+  }
+
+  .service-fold {
+    overflow: visible;
+  }
+
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    align-items: center;
+  }
+
+  .site-header .header-branding {
+    grid-column: 1;
+    min-width: 0;
+    max-width: 100%;
+    gap: 0.35rem;
+    overflow: hidden;
+  }
+
+  .site-header .menu-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    flex-shrink: 0;
+    margin-left: 0.15rem;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+    gap: 0.45rem;
+  }
+
+  .brand__mark {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .brand__ar {
+    display: none;
+  }
+
+  .brand__en {
+    font-size: 0.5rem;
+    letter-spacing: 0.07em;
+    line-height: 1.25;
+    white-space: normal;
+    max-width: 5.75rem;
+  }
+
+  .header-partner {
+    flex-shrink: 0;
+    padding-left: 0.35rem;
+    gap: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .header-partner__copy {
+    display: none;
+  }
+
+  .header-partner__logo {
+    height: 2.1rem;
+    width: 2.1rem;
+    max-width: 2.1rem;
+    object-fit: cover;
+    object-position: center 12%;
+    border-radius: 50%;
   }
 
   .site-nav {
@@ -1836,16 +1941,14 @@ a {
 }
 
 @media (max-width: 560px) {
-  .brand__ar {
-    font-size: 0.6rem;
+  .brand__en {
+    max-width: 5rem;
+    font-size: 0.46rem;
   }
 
-  .header-partner__label {
-    display: none;
-  }
-
-  .header-partner__name {
-    font-size: 0.52rem;
-    letter-spacing: 0.1em;
+  .header-partner__logo {
+    height: 1.85rem;
+    width: 1.85rem;
+    max-width: 1.85rem;
   }
 }
